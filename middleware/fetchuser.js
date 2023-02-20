@@ -8,7 +8,7 @@ const JWT_SECRET = "$$$thisismyseckey$$$"
 const fetchuser = (req, res, next)=> {
     const token = req.body.authToken
     if (!token) {
-        res.status(401).send({ error: "Please authenticate using a valid token" })
+        res.send({ error: "Please authenticate using a valid token" })
     }
 
     try {
@@ -17,7 +17,7 @@ const fetchuser = (req, res, next)=> {
         next()
 
     } catch (error) {
-        res.status(401).send({ error: "Please authenticate using a valid token" })
+        res.send({ error: "Please authenticate using a valid token" })
 
     }
 
